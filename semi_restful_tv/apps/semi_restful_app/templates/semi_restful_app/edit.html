@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{% static 'semi_restful_app/css/main.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Restful Shows</title>
+</head>
+
+<body>
+    <div id="container">
+        <h1 id="big">Edit Show #</h1>
+        <form name="new" action="/shows/update" method="post">
+            {% csrf_token %}
+            <h3>Title</h3>
+            <input class="input" type="text" name="title" value="{{show.title}}">
+            <h3>Network</h3>
+            <input class="input" type="text" name="network" value="{{show.network}}">
+            <h3>Release Date</h3>
+            <label for="start">Start date:</label>
+            <input type="date" id="start" name="releasedate" value="0000-00-00" min="1800-01-01" max="2025-12-31" value="{{show.releasedate}}">
+            <h3>Description</h3>
+            <input class="input" type="text" name="description" value="{{show.desc}}">
+            <input class="input" type="hidden" name="id" value="{{show.id}}">
+            <input id="button" type="submit">
+        </form>
+        <a href="/shows/{{show.id}}">
+            <h2>Show</h2>
+        </a>|
+        <a href="/shows">
+            <h2>Go Back</h2>
+        </a>
+    </div>
+</body>
+
+</html>

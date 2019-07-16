@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{% static 'semi_restful_app/css/main.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Restful Shows</title>
+</head>
+
+<body>
+    <div id="container">
+        <h1 id="big">shows</h1>
+        <div id="display">
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Network</th>
+                        <th scope="col">Release Date</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for show in shows %}
+                    <tr>
+                        <td>{{show.id}}</td>
+                        <td><a href="/shows/{{show.id}}">{{show.title}} </a></td>
+                        <td>{{show.network}}</td>
+                        <td>{{show.releasedate}}</td>
+                        <td><a href="/shows/{{show.id}}">Show</a> <a href="/shows/{{show.id}}/edit">Edit</a> <a href="/shows/{{show.id}}/destroy">Delete</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <a href="/shows/new">
+            <h2>Add a new show...</h2>
+        </a>
+    </div>
+</body>
+
+</html>
