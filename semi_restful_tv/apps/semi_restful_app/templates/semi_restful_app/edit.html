@@ -15,7 +15,7 @@
 <body>
     <div id="container">
         <h1 id="big">Edit Show #</h1>
-        <form name="new" action="/shows/update" method="post">
+        <form name="new" action="/update" method="post">
             {% csrf_token %}
             <h3>Title</h3>
             <input class="input" type="text" name="title" value="{{show.title}}">
@@ -29,7 +29,7 @@
             <input class="input" type="hidden" name="id" value="{{show.id}}">
             <input id="button" type="submit">
         </form>
-        <a href="/shows/{{show.id}}">
+        <a href="/{{show.id}}">
             <h2>Show</h2>
         </a>|
         <a href="/shows">

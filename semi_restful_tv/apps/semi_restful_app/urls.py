@@ -3,10 +3,11 @@ from . import views
 
 urlpatterns = [
     url('shows', views.index),
-    url('shows/create', views.create),
-    url('shows/new', views.new),
-    url('shows/<int:id>', views.show),
-    url('shows/<int:id>/edit', views.edit),
-    url('shows/<int:id>/destroy', views.destroy),
-    url('shows/update', views.update)
+    url('create', views.create),
+    url('new', views.new),
+    url(r'^(?P<id>\d+)$', views.show),
+    url(r'^(?P<id>\d+)/edit$', views.edit),
+    url(r'^(?P<id>\d+)/destroy$', views.destroy),
+    url('update', views.update)
 ]
+

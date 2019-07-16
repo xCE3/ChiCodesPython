@@ -15,7 +15,7 @@
 <body>
     <div id="container">
         <h1 id="big">Add a new Show...</h1>
-        <form name="newshow" action="/shows/create" method="post">
+        <form name="newshow" action="/create" method="post">
             {% csrf_token %}
             <h3>Title</h3>
             <input class="input" type="text" name="title">
