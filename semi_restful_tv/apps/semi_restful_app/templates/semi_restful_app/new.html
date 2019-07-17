@@ -13,25 +13,31 @@
 </head>
 
 <body>
-    <div id="container">
-        <h1 id="big">Add a new Show...</h1>
-        <form name="newshow" action="/create" method="post">
-            {% csrf_token %}
-            <h3>Title</h3>
-            <input class="input" type="text" name="title">
-            <h3>Network</h3>
-            <input class="input" type="text" name="network">
-            <h3>Release Date</h3>
-            <label for="start">Start date:</label>
-            <input type="date" id="start" name="releasedate" value="0000-00-00" min="1800-01-01" max="2025-12-31">
-            <h3>Description</h3>
-            <input class="input" type="text" name="desc">
-            <input id="button" type="submit">
-        </form>
-        <a href="/shows">
-            <h2>Go Back</h2>
-        </a>
-    </div>
+    <div class='main'>
+        {% if messages %} {% for msg in messages %}
+        <div class="alert">
+            {{msg.message}}
+        </div>
+        {% endfor %} {% endif %}
+        <div id="container">
+            <h1 id="big">Add a new Show...</h1>
+            <form name="newshow" action="/create" method="post">
+                {% csrf_token %}
+                <h3>Title</h3>
+                <input class="input" type="text" name="title">
+                <h3>Network</h3>
+                <input class="input" type="text" name="network">
+                <h3>Release Date</h3>
+                <label for="start">Start date:</label>
+                <input type="date" id="start" name="releasedate" value="0000-00-00" min="1800-01-01" max="2025-12-31">
+                <h3>Description</h3>
+                <input class="input" type="text" name="desc">
+                <input id="button" type="submit">
+            </form>
+            <a href="/shows">
+                <h2>Go Back</h2>
+            </a>
+        </div>
 </body>
 
 </html>
