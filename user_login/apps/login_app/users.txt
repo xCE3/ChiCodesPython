@@ -11,8 +11,8 @@
 
 
 3.) Create a few records in the users
-    User.objects.create(firstname="John", lastname="Barrett", email="johnjbarrett22@gmail.com", age="36")
-    User.objects.create(firstname="Christina", lastname="Barrett", email="baybeeboo19@gmail.com", age="36")
+    User.objects.create(firstname="Charles", lastname="Edwards", email="charlesedwards153@rocketmail.com", age="22")
+    User.objects.create(firstname="Christina", lastname="Barrett", email="baybeeboo19@gmail.com", age="59")
     User.objects.create(firstname="Alyssa", lastname="Barrett", age="3")
 
 
