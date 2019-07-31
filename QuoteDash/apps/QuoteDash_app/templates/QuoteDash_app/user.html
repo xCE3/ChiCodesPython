@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>User</title>
+</head>
+
+<body>
+    <a href="/quotes">Dashboard</a>
+    <a href="/logout">Logout</a>
+    <h1>Posts by {{user.name}} </h1>
+    <p>Count:{{user.likes.all | length}}</p>
+
+    {% for like in likes %}
+    <div>
+        <span style="color: red">{{like.author}}:</span> {{like.content}}
+    </div>
+    {% endfor %}
+</body>
+
+</html>
